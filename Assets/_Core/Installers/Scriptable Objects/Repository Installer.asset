@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3da7e5745b02c6749bc0076db23a1816, type: 3}
   m_Name: Repository Installer
   m_EditorClassIdentifier: 
+  _popupRepository: {fileID: 11400000, guid: 728ee06d8518da0499e64c440379a698, type: 2}
+  _itemRepository: {fileID: 11400000, guid: 25ba9dfab93d1fa44a692860ec17dc2d, type: 2}
+  _spinRepository: {fileID: 11400000, guid: 049e1b70d8ed78b429929c3860f33e0b, type: 2}
+  _spinWaveData: {fileID: 11400000, guid: 1447900f7e693054cbf8b71f66f23791, type: 2}

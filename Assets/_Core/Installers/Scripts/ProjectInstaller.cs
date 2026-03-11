@@ -9,9 +9,6 @@ namespace Core
         {
             InstallSignalBus();
             
-            // Configure bindings
-            //Container.BindInterfacesAndSelfTo<CurrencyManager>().AsSingle().NonLazy();
-            
         }
 
         public void InstallSignalBus()
@@ -22,7 +19,7 @@ namespace Core
             
 
             //[GAME]
-            //Container.DeclareSignal<CurrencyChangedSignal>().OptionalSubscriber();
+            Container.DeclareSignal<CurrencyParticleSignal>().OptionalSubscriber();
         }
     }
 }

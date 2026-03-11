@@ -1,4 +1,4 @@
-﻿//using Popup;
+﻿using Popup;
 using Zenject;
 
 namespace Core
@@ -10,11 +10,10 @@ namespace Core
             InstallSignalBus();
             
             // Configure bindings
-            #if SEMRUK_SR_DEBUGGER_ENABLED
-            Container.QueueForInject(SRDependencyManager.Instance);
-            #endif
             
-            //Container.BindInterfacesAndSelfTo<PopupManager>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<PopupManager>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<ItemManager>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<SpinManager>().AsSingle().NonLazy();
         }
 
         private void InstallSignalBus()

@@ -4767,11 +4767,11 @@ MonoBehaviour:
     m_Right: 15
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 125, y: 125}
-  m_Spacing: {x: 85, y: 50}
+  m_Spacing: {x: 60, y: 50}
   m_Constraint: 1
   m_ConstraintCount: 5
 --- !u!114 &2071570060

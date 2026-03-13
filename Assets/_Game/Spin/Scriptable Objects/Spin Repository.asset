@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2acf60446544740a3c121ed8d5081e, type: 3}
   m_Name: Spin Repository
   m_EditorClassIdentifier: 
+  reviveCost: 20
   _datas:
   - type: 1
     baseIcon: {fileID: 21300000, guid: 3a01a8381d493ff4c97ec286b6ef63f0, type: 3}

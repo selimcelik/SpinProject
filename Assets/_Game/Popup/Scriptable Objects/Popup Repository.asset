@@ -22,3 +22,12 @@ MonoBehaviour:
       startScale: {x: 0, y: 0, z: 0}
       endScale: {x: 1, y: 1, z: 1}
     isHideUI: 0
+  - type: 2
+    animationData:
+      openEase: 27
+      openDuration: 0.5
+      closeEase: 26
+      closeDuration: 0.5
+      startScale: {x: 0, y: 0, z: 0}
+      endScale: {x: 1, y: 1, z: 1}
+    isHideUI: 0

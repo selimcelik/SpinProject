@@ -16,12 +16,13 @@ public class SpinWaveData : ScriptableObject
 
     public SpinWave GetWave(int index)
     {
-        if (index < 0 || index >= _waves.Count)
+        if (_waves == null || _waves.Count == 0 || index < 0)
         {
             return null;
         }
 
-        return _waves[index];
+        int wrappedIndex = index % _waves.Count;
+        return _waves[wrappedIndex];
     }
 }
 

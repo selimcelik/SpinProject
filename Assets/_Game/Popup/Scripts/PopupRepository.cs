@@ -42,5 +42,6 @@ namespace Popup
     {
         Undefined = 0,
         CardPopUp = 1,
+        DeathPopUp = 2,
     }
 }

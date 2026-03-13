@@ -14,6 +14,7 @@ namespace Core
             Container.BindInterfacesAndSelfTo<PopupManager>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<ItemManager>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<SpinManager>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<CurrencyManager>().AsSingle().NonLazy();
         }
 
         private void InstallSignalBus()

@@ -8,6 +8,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Spin Repository", menuName = "Spin/Spin Repository")]
 public class SpinRepository : ScriptableObject
 {
+    public float reviveCost;
     [SerializeField, TableList] private List<SpinData> _datas = new List<SpinData>();
 
     public SpinData GetData(SpinType type)

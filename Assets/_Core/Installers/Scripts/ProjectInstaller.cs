@@ -20,6 +20,8 @@ namespace Core
 
             //[GAME]
             Container.DeclareSignal<CurrencyParticleSignal>().OptionalSubscriber();
+            Container.DeclareSignal<DeathPopupDecisionSignal>().OptionalSubscriber();
+            Container.DeclareSignal<SpinProgressResetSignal>().OptionalSubscriber();
         }
     }
 }

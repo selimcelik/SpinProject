@@ -17,139 +17,349 @@ MonoBehaviour:
     spinType: 2
     items:
     - type: 22
-      chance: 0
+      chance: 10
       multiple: 0
       amount: 0
     - type: 23
-      chance: 0
+      chance: 10
       multiple: 0
       amount: 0
     - type: 21
-      chance: 0
+      chance: 10
       multiple: 0
       amount: 0
     - type: 14
-      chance: 0
+      chance: 10
       multiple: 0
       amount: 0
     - type: 33
-      chance: 0
-      multiple: 0
-      amount: 0
+      chance: 10
+      multiple: 1
+      amount: 5
     - type: 16
-      chance: 0
-      multiple: 0
-      amount: 0
+      chance: 10
+      multiple: 1
+      amount: 2
     - type: 35
-      chance: 0
+      chance: 10
       multiple: 0
       amount: 0
     - type: 31
-      chance: 100
-      multiple: 0
-      amount: 0
+      chance: 30
+      multiple: 1
+      amount: 10
   - waveIndex: 1
     spinType: 1
     items:
     - type: 35
-      chance: 100
+      chance: 11
       multiple: 0
       amount: 0
     - type: 19
-      chance: 0
-      multiple: 0
-      amount: 0
+      chance: 11
+      multiple: 1
+      amount: 3
     - type: 2
-      chance: 0
+      chance: 11
       multiple: 0
       amount: 0
     - type: 1
-      chance: 0
+      chance: 11
       multiple: 0
       amount: 0
     - type: 33
-      chance: 0
-      multiple: 0
-      amount: 0
+      chance: 11
+      multiple: 1
+      amount: 5
     - type: 28
-      chance: 0
-      multiple: 0
-      amount: 0
+      chance: 11
+      multiple: 1
+      amount: 5
     - type: 24
-      chance: 0
+      chance: 11
       multiple: 0
       amount: 0
     - type: 33
-      chance: 0
-      multiple: 0
-      amount: 0
+      chance: 23
+      multiple: 1
+      amount: 7
   - waveIndex: 2
-    spinType: 1
+    spinType: 3
     items:
     - type: 35
-      chance: 1
+      chance: 5
       multiple: 0
       amount: 0
     - type: 15
-      chance: 1
-      multiple: 0
-      amount: 0
+      chance: 15
+      multiple: 1
+      amount: 2
     - type: 9
-      chance: 1
+      chance: 15
       multiple: 0
       amount: 0
     - type: 18
-      chance: 1
-      multiple: 0
-      amount: 0
+      chance: 10
+      multiple: 1
+      amount: 2
     - type: 23
-      chance: 1
+      chance: 10
       multiple: 0
       amount: 0
     - type: 13
-      chance: 1
+      chance: 10
       multiple: 0
       amount: 0
     - type: 16
-      chance: 1
-      multiple: 0
-      amount: 0
-    - type: 16
-      chance: 93
-      multiple: 0
-      amount: 0
+      chance: 10
+      multiple: 1
+      amount: 2
+    - type: 11
+      chance: 25
+      multiple: 1
+      amount: 20
   - waveIndex: 3
     spinType: 1
     items:
     - type: 12
-      chance: 1
+      chance: 5
       multiple: 0
       amount: 0
     - type: 35
-      chance: 1
+      chance: 3
       multiple: 0
       amount: 0
     - type: 14
-      chance: 1
+      chance: 12
       multiple: 0
       amount: 0
     - type: 15
-      chance: 1
-      multiple: 0
-      amount: 0
+      chance: 11
+      multiple: 1
+      amount: 3
     - type: 20
-      chance: 1
+      chance: 17
       multiple: 0
       amount: 0
     - type: 18
-      chance: 1
-      multiple: 0
-      amount: 0
+      chance: 10
+      multiple: 1
+      amount: 3
     - type: 14
-      chance: 1
+      chance: 16
       multiple: 0
       amount: 0
     - type: 29
-      chance: 93
+      chance: 26
+      multiple: 1
+      amount: 10
+  - waveIndex: 4
+    spinType: 2
+    items:
+    - type: 10
+      chance: 15
+      multiple: 1
+      amount: 15
+    - type: 35
+      chance: 3
       multiple: 0
       amount: 0
+    - type: 2
+      chance: 12
+      multiple: 0
+      amount: 0
+    - type: 3
+      chance: 11
+      multiple: 1
+      amount: 3
+    - type: 8
+      chance: 17
+      multiple: 0
+      amount: 0
+    - type: 27
+      chance: 10
+      multiple: 1
+      amount: 3
+    - type: 34
+      chance: 16
+      multiple: 0
+      amount: 0
+    - type: 10
+      chance: 16
+      multiple: 1
+      amount: 20
+  - waveIndex: 5
+    spinType: 2
+    items:
+    - type: 1
+      chance: 15
+      multiple: 0
+      amount: 0
+    - type: 35
+      chance: 10
+      multiple: 0
+      amount: 0
+    - type: 29
+      chance: 12
+      multiple: 1
+      amount: 10
+    - type: 18
+      chance: 11
+      multiple: 1
+      amount: 2
+    - type: 21
+      chance: 17
+      multiple: 0
+      amount: 0
+    - type: 35
+      chance: 10
+      multiple: 0
+      amount: 0
+    - type: 16
+      chance: 16
+      multiple: 1
+      amount: 3
+    - type: 10
+      chance: 9
+      multiple: 1
+      amount: 20
+  - waveIndex: 6
+    spinType: 3
+    items:
+    - type: 6
+      chance: 15
+      multiple: 0
+      amount: 0
+    - type: 35
+      chance: 10
+      multiple: 0
+      amount: 0
+    - type: 11
+      chance: 12
+      multiple: 1
+      amount: 10
+    - type: 19
+      chance: 11
+      multiple: 1
+      amount: 2
+    - type: 24
+      chance: 17
+      multiple: 0
+      amount: 0
+    - type: 30
+      chance: 10
+      multiple: 1
+      amount: 20
+    - type: 31
+      chance: 16
+      multiple: 1
+      amount: 5
+    - type: 20
+      chance: 9
+      multiple: 0
+      amount: 0
+  - waveIndex: 7
+    spinType: 1
+    items:
+    - type: 9
+      chance: 15
+      multiple: 0
+      amount: 0
+    - type: 20
+      chance: 10
+      multiple: 0
+      amount: 0
+    - type: 10
+      chance: 12
+      multiple: 1
+      amount: 10
+    - type: 35
+      chance: 11
+      multiple: 0
+      amount: 0
+    - type: 24
+      chance: 17
+      multiple: 0
+      amount: 0
+    - type: 28
+      chance: 10
+      multiple: 1
+      amount: 20
+    - type: 12
+      chance: 16
+      multiple: 0
+      amount: 0
+    - type: 1
+      chance: 9
+      multiple: 0
+      amount: 0
+  - waveIndex: 8
+    spinType: 2
+    items:
+    - type: 5
+      chance: 15
+      multiple: 0
+      amount: 0
+    - type: 14
+      chance: 10
+      multiple: 0
+      amount: 0
+    - type: 13
+      chance: 12
+      multiple: 0
+      amount: 0
+    - type: 35
+      chance: 11
+      multiple: 0
+      amount: 0
+    - type: 32
+      chance: 17
+      multiple: 1
+      amount: 7
+    - type: 28
+      chance: 10
+      multiple: 1
+      amount: 20
+    - type: 10
+      chance: 16
+      multiple: 1
+      amount: 20
+    - type: 11
+      chance: 9
+      multiple: 1
+      amount: 50
+  - waveIndex: 9
+    spinType: 3
+    items:
+    - type: 7
+      chance: 15
+      multiple: 0
+      amount: 0
+    - type: 21
+      chance: 10
+      multiple: 0
+      amount: 0
+    - type: 19
+      chance: 12
+      multiple: 1
+      amount: 5
+    - type: 35
+      chance: 11
+      multiple: 0
+      amount: 0
+    - type: 35
+      chance: 17
+      multiple: 0
+      amount: 0
+    - type: 22
+      chance: 10
+      multiple: 0
+      amount: 0
+    - type: 10
+      chance: 16
+      multiple: 1
+      amount: 20
+    - type: 11
+      chance: 9
+      multiple: 1
+      amount: 50

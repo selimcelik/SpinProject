@@ -10,6 +10,8 @@ public class GainedItemView : MonoBehaviour
     public event Action<GainedItemView> OnUnlocked;
 
     public bool IsUnlocked => _isUnlocked;
+    public SpinWaveItemData RewardData => _rewardData;
+    public bool IsCurrencyClaimed => _isCurrencyClaimed;
 
     [Header("COMPONENTS")]
     [SerializeField]private GameObject _locked;
@@ -21,6 +23,8 @@ public class GainedItemView : MonoBehaviour
 
     [Header("READONLY")]
     [ShowInInspector,ReadOnly] private bool _isUnlocked;
+    [ShowInInspector,ReadOnly] private bool _isCurrencyClaimed;
+    [ShowInInspector,ReadOnly] private SpinWaveItemData _rewardData;
     
     private ItemManager _itemManager;
 
@@ -65,6 +69,9 @@ public class GainedItemView : MonoBehaviour
             return;
         }
 
+        _rewardData = waveItemData;
+        _isCurrencyClaimed = false;
+
         ItemData itemData = _itemManager.GetData(waveItemData.type);
 
         if (itemData?.icon != null && _icon != null)
@@ -82,6 +89,31 @@ public class GainedItemView : MonoBehaviour
         _isUnlocked = true;
         SetActiveState(false, false, true);
         OnUnlocked?.Invoke(this);
+    }
+
+    public void ResetView()
+    {
+        _isUnlocked = false;
+        _isCurrencyClaimed = false;
+        _rewardData = null;
+
+        if (_icon != null)
+        {
+            _icon.sprite = null;
+        }
+
+        if (_amountText != null)
+        {
+            _amountText.text = string.Empty;
+            _amountText.gameObject.SetActive(false);
+        }
+
+        RefreshState(false);
+    }
+
+    public void MarkCurrencyClaimed()
+    {
+        _isCurrencyClaimed = true;
     }
 
     private void SetActiveState(bool lockedActive, bool lockedBackgroundActive, bool unlockedActive)

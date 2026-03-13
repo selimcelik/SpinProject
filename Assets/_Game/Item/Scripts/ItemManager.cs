@@ -13,14 +13,16 @@ public class ItemManager : IInitializable, IDisposable
     private readonly SpinManager _spinManager;
     private readonly ItemRepository _repository;
     private readonly DiContainer _container;
+    private readonly SignalBus _signalBus;
 
     private bool _isInitialized;
 
-    public ItemManager(SpinManager spinManager, ItemRepository repository, DiContainer container)
+    public ItemManager(SpinManager spinManager, ItemRepository repository, DiContainer container, SignalBus signalBus)
     {
         _spinManager = spinManager;
         _repository = repository;
         _container = container;
+        _signalBus = signalBus;
     }
 
     public void Initialize()
@@ -29,6 +31,7 @@ public class ItemManager : IInitializable, IDisposable
         BootstrapGainedViews();
         CacheParticleListeners();
         _spinManager.CurrentWaveIndex.OnChanged += OnCurrentWaveIndexChanged;
+        _signalBus.Subscribe<SpinProgressResetSignal>(OnSpinProgressReset);
         RefreshViews();
         RefreshGainedViews();
     }
@@ -36,6 +39,7 @@ public class ItemManager : IInitializable, IDisposable
     public void Dispose()
     {
         _spinManager.CurrentWaveIndex.OnChanged -= OnCurrentWaveIndexChanged;
+        _signalBus.TryUnsubscribe<SpinProgressResetSignal>(OnSpinProgressReset);
         ClearAllViews();
     }
 
@@ -111,6 +115,29 @@ public class ItemManager : IInitializable, IDisposable
         CacheParticleListeners();
         _particleListeners.TryGetValue(type, out listener);
         return listener;
+    }
+
+    public int ClaimCoinRewards()
+    {
+        int totalCoinAmount = 0;
+
+        foreach (GainedItemView view in _gainedViews)
+        {
+            if (view == null || !view.IsUnlocked || view.IsCurrencyClaimed || view.RewardData == null)
+            {
+                continue;
+            }
+
+            if (view.RewardData.type != ItemType.Gold && view.RewardData.type != ItemType.Cash)
+            {
+                continue;
+            }
+
+            totalCoinAmount += GetRewardAmount(view.RewardData);
+            view.MarkCurrencyClaimed();
+        }
+
+        return totalCoinAmount;
     }
 
     private void RefreshViews()
@@ -246,6 +273,17 @@ public class ItemManager : IInitializable, IDisposable
         RefreshGainedViews();
     }
 
+    private void OnSpinProgressReset()
+    {
+        foreach (GainedItemView view in _gainedViews)
+        {
+            view?.ResetView();
+        }
+
+        RefreshGainedViews();
+        RefreshViews();
+    }
+
     private int GetLogicalIndex(RectTransform rectTransform)
     {
         if (rectTransform == null)
@@ -264,5 +302,20 @@ public class ItemManager : IInitializable, IDisposable
         _views.Clear();
         _gainedViews.Clear();
         _particleListeners.Clear();
+    }
+
+    private static int GetRewardAmount(SpinWaveItemData waveItemData)
+    {
+        if (waveItemData == null)
+        {
+            return 0;
+        }
+
+        if (waveItemData.multiple && waveItemData.amount > 0)
+        {
+            return waveItemData.amount;
+        }
+
+        return 1;
     }
 }

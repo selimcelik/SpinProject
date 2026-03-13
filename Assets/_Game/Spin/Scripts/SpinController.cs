@@ -1,8 +1,11 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using Coffee.UIEffects;
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -15,12 +18,14 @@ public class SpinController : MonoBehaviour
     [Header("COMPONENTS")]
     [SerializeField] private Image _indicator;
     [SerializeField] private Image _base;
+    [SerializeField] private TextMeshProUGUI _spinTitleTMP;
     [SerializeField] private RectTransform _itemViewsRoot;
     [SerializeField] private Button _spinButton; 
     [SerializeField] private RectTransform _baseRect;
     [SerializeField] private RectTransform _indicatorRect;
     [SerializeField] private RectTransform _spinButtonRect;
     [SerializeField] private UIEffect _spinButtonEffect;
+    [SerializeField] private List<TitleTextData> _titleTextDatas;
 
     [Header("SPIN")]
     [SerializeField] private Vector2 _spinDurationRange = new Vector2(4f, 6f);
@@ -207,6 +212,12 @@ public class SpinController : MonoBehaviour
 
         _base.sprite = _spinData.baseIcon;
         _indicator.sprite = _spinData.indicatorIcon;
+        TitleTextData titleTextData = _titleTextDatas.FirstOrDefault(data => data.spinType == _type);
+        if (titleTextData != null)
+        {
+            _spinTitleTMP.text = titleTextData.title;
+            _spinTitleTMP.color = titleTextData.color;
+        }
     }
 
     private void ApplyWheelAngle(float angle)
@@ -438,4 +449,12 @@ public class SpinController : MonoBehaviour
     {
         return Mathf.Repeat(angle, 360f);
     }
+}
+
+[Serializable]
+public class TitleTextData
+{
+    public SpinType spinType;
+    public string title;
+    public Color color;
 }
